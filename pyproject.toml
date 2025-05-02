@@ -1,0 +1,25 @@
+[project]
+name = "codygo-mono-sample"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Dani Kenan", email = "danikenan@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "codygo-dep1",
+]
+
+[project.scripts]
+server = "server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+codygo-dep1 = { workspace = true }

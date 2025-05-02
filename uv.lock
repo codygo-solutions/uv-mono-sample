@@ -1,0 +1,36 @@
+version = 1
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "codygo-dep1",
+    "codygo-dep2",
+    "codygo-mono-sample",
+]
+
+[[package]]
+name = "codygo-dep1"
+version = "0.1.0"
+source = { editable = "packages/codygo-dep1" }
+dependencies = [
+    { name = "codygo-dep2" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "codygo-dep2", editable = "packages/codygo-dep2" }]
+
+[[package]]
+name = "codygo-dep2"
+version = "0.1.0"
+source = { editable = "packages/codygo-dep2" }
+
+[[package]]
+name = "codygo-mono-sample"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "codygo-dep1" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "codygo-dep1", editable = "packages/codygo-dep1" }]

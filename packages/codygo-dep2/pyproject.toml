@@ -1,0 +1,17 @@
+[project]
+name = "codygo-dep2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Dani Kenan", email = "danikenan@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+# [project.scripts]
+# codygo-dep2 = "codygo_dep2:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
