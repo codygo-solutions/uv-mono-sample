@@ -1,3 +1,3 @@
-from codygo_dept2.utils import my_value
+from codygo_dep2.utils import some_var
 
-mv_agg_value = my_value  * 10
+mv_agg_value = some_var  * 10
