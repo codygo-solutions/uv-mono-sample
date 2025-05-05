@@ -1,20 +1,14 @@
 [project]
-name = "codygo-mono-sample"
+name = "codygo-server1"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "Dani Kenan", email = "danikenan@gmail.com" }
-]
 requires-python = ">=3.12"
 dependencies = [
     "uvicorn[standard]",
     "fastapi",
     "codygo-dep1",
-    "codygo_server1"
 ]
-
-
 [project.scripts]
 server = "server:main"
 
@@ -22,10 +16,5 @@ server = "server:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv.workspace]
-members = ["packages/*"]
-
 [tool.uv.sources]
 codygo-dep1 = { workspace = true }
-
-

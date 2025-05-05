@@ -18,3 +18,5 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.uv.sources]
+codygo-dep2 = { workspace = true }

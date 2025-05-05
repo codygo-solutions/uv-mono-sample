@@ -66,7 +66,6 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "codygo-dep1" },
-    { name = "codygo-dep2" },
     { name = "fastapi" },
     { name = "uvicorn" },
 ]
@@ -74,7 +73,6 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "codygo-dep1", editable = "packages/codygo-dep1" },
-    { name = "codygo-dep2", editable = "packages/codygo-dep2" },
     { name = "fastapi" },
     { name = "uvicorn" },
 ]

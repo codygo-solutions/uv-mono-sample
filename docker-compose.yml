@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  shared-config:
+    build:
+      context: .
+      dockerfile: Dockerfile.volume
+    image: shared-config-image
+    container_name: shared-config
+    volumes:
+      - shared-volume:/config
+
+
+  server1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codygo-server1
+    ports:
+      - "8001:8000"
+    command: [".venv/bin/python", "-m", "uvicorn", "packages.codygo-server1.server:app", "--host=0.0.0.0", "--port=8000"]
+    volumes:
+      - shared-volume:/app/config
+    depends_on:
+      - shared-config
+
+  server2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codygo-server
+    ports:
+      - "8002:8000"
+    command: [".venv/bin/python", "-m", "uvicorn", "src.server:app", "--host=0.0.0.0", "--port=8000"]
+    volumes:
+      - shared-volume:/app/config
+    depends_on:
+      - shared-config
+
+volumes:
+  shared-volume:
